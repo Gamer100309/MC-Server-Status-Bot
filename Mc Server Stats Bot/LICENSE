@@ -1,0 +1,117 @@
+Minecraft Multi-Server Status Bot
+Copyright (C) 2025 RedCity Industries | Gamer100309
+
+RedCity Industries is a fictional organization created for the "RedCity" Minecraft world. 
+It is not a legal entity, but simply part of the community and roleplay setting. 
+All rights to the project belong to the individual author, Gamer100309.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 3 as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+================================================================================
+FULL LICENSE TEXT:
+
+For the complete text of the GNU General Public License v3.0, please visit:
+https://www.gnu.org/licenses/gpl-3.0.txt
+
+================================================================================
+WHAT THIS MEANS FOR YOU:
+
+✅ You CAN:
+   - Use this bot for free (private and commercial Discord servers)
+   - View and study the source code
+   - Modify the source code for your needs
+   - Distribute the original or modified versions
+   - Update the bot for newer Discord.js versions
+   - Add new features and improvements
+   - Use it to monitor unlimited Minecraft servers
+
+⚠️ You MUST:
+   - Keep this license notice in all copies
+   - Share your modifications under GPL v3 as well
+   - Provide the source code when distributing
+   - Document your changes clearly
+   - Credit the original author (Gamer100309)
+
+❌ You CANNOT:
+   - Sell this bot without providing the source code
+   - Change the license to a more restrictive one
+   - Hold the author liable for any damages
+   - Remove or modify copyright notices
+
+================================================================================
+PROJECT INFORMATION:
+
+Project:  Minecraft Multi-Server Status Bot v4.0
+Author:   RedCity Industries | Gamer100309
+GitHub:   https://github.com/Gamer100309/MC-Server-Status-Bot
+Support:  https://github.com/Gamer100309/MC-Server-Status-Bot/issues
+
+Features:
+• Multi-Guild & Multi-Server Support
+• Multi-Language System (German, English, + Custom)
+• Real-time Server Status Monitoring
+• Automatic Server Icon Saving
+• 30 Professional Debug Tools
+• Interactive Discord Setup Menus
+• Fully Customizable (Colors, Emojis, Buttons)
+
+================================================================================
+CONTACT & COMMUNITY:
+
+🐛 Report Bugs:     https://github.com/Gamer100309/MC-Server-Status-Bot/issues
+💡 Feature Ideas:   https://github.com/Gamer100309/MC-Server-Status-Bot/discussions
+⭐ Star the Repo:   https://github.com/Gamer100309/MC-Server-Status-Bot
+🤝 Contributing:    Pull Requests welcome!
+
+================================================================================
+THIRD-PARTY LIBRARIES:
+
+This project uses the following open-source libraries:
+• discord.js (Apache-2.0 License)
+• minecraft-server-util (MIT License)
+
+See package.json for full dependency list.
+
+================================================================================
+CHANGELOG:
+
+v4.0 (2025-12-19)
+• Multi-Language System with MessageHandler
+• 30 Debug Tools for testing and maintenance
+• Improved guild configuration management
+• Enhanced error handling and logging
+• Production-ready code cleanup
+
+v3.0 (2025)
+• Multi-Guild Support
+• Interactive Setup Menus
+• Custom Icon Support
+
+v2.0 (2025)
+• Button Integration
+• Enhanced Embed Customization
+
+v1.0 (2025)
+• Initial Release
+• Basic Server Status Monitoring
+
+================================================================================
+DISCLAIMER:
+
+This is a human-readable summary. The full legal text of the GPL v3 license
+takes precedence in case of any disputes.
+
+This bot is not affiliated with or endorsed by Mojang Studios or Microsoft.
+"Minecraft" is a trademark of Mojang Studios.
+
+================================================================================

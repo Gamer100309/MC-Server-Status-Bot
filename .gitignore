@@ -1,0 +1,61 @@
+# ═══════════════════════════════════════════════════════════
+#  .gitignore - MC Server Status Bot
+#  Protects secrets and runtime data
+# ═══════════════════════════════════════════════════════════
+
+# === BOT SECRETS & CONFIG ===
+Mc Server Stats Bot/global-config.json
+Mc Server Stats Bot/config.json
+
+# === RUNTIME DATA ===
+Mc Server Stats Bot/configs/
+Mc Server Stats Bot/states/
+Mc Server Stats Bot/Icons/
+Mc Server Stats Bot/logs/
+
+# === NODE.JS ===
+node_modules/
+Mc Server Stats Bot/node_modules/
+package-lock.json
+Mc Server Stats Bot/package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === BACKUPS ===
+*.backup.json
+*.backup.js
+backup_*/
+Mc Server Stats Bot/backup_*/
+
+# === DEBUG REPORTS ===
+Mc Server Stats Bot/Debug/System Report/
+
+# === OS FILES ===
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# === IDE FILES ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === LOGS ===
+*.log
+
+# === TEMP FILES ===
+*.tmp
+*.temp

@@ -1,0 +1,35 @@
+{
+  "token": "YOUR_BOT_TOKEN_HERE",
+  "verboseLogging": true,
+  "defaults": {
+    "updateInterval": 10000,
+    "embedColors": {
+      "online": "#00FF00",
+      "offline": "#FF0000"
+    },
+    "defaultEmojis": {
+      "online": "🟢",
+      "offline": "🔴",
+      "ip": "🌐",
+      "version": "⚙️",
+      "players": "👥",
+      "ping": "📶",
+      "port": "🔑",
+      "playerList": "👤",
+      "motd": "📢"
+    },
+    "defaultButtonMessages": {
+      "ipMessage": "📋 **Server IP:**\n```\n{ip}\n```\n**To copy:** Select text and press CTRL+C",
+      "portMessage": "🔑 **Server Port:**\n```\n{port}\n```\n**To copy:** Select text and press CTRL+C",
+      "playersMessage": "👥 **Online Players ({count}/{max}):**\n```\n{players}\n```"
+    },
+    "setupPermissions": {
+      "allowAdministrator": true,
+      "allowedRoles": []
+    },
+    "textSettings": {
+      "defaultLanguage": "en",
+      "allowCustomTexts": true
+    }
+  }
+}

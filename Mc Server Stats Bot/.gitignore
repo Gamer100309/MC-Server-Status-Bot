@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Config files (contains sensitive data)
+global-config.json
+
+# Runtime data
+configs/
+states/
+Icons/
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backups
+backup_*/
+
+# Debug reports
+Debug/System\ Report/
