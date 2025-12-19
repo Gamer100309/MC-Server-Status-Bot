@@ -1,144 +1,118 @@
-# 🤖 Minecraft Multi-Server Status Bot v4.0
+# 🤖 Minecraft Multi-Server Status Bot v5.1
 
-Ein professioneller Discord Bot für Minecraft Server Status Monitoring mit Multi-Language Support.
+Ein hochprofessioneller Discord-Bot für das Minecraft-Server-Monitoring mit **Multi-Language-Support**, jetzt inklusive **automatischem Installer**.
+
+---
 
 ## ✨ Features
 
-- 🌍 **Multi-Guild Support** - Ein Bot für mehrere Discord Server
-- 🌐 **Multi-Language System** - Deutsch & Englisch (+ Custom Languages)
-- 🎨 **Vollständig Anpassbar** - Farben, Emojis, Buttons, Texte
-- 📊 **Live Status Monitoring** - Automatische Updates
-- 🖼️ **Server Icons** - Automatisches Speichern von Server-Favicons
-- 🔧 **30 Debug Tools** - Professionelles Testing & Debugging
-- ⚙️ **Setup via Discord** - Keine Config-Dateien bearbeiten
-- 🔐 **Permissions System** - Granulare Berechtigungssteuerung
+- 🚀 **New: One-Click Installer** – Kinderleichte Einrichtung für Windows, Linux & macOS  
+- 🌍 **Multi-Guild Support** – Ein Bot kann beliebig viele Discord-Server gleichzeitig bedienen  
+- 🌐 **Multi-Language System** – Deutsch & Englisch out-of-the-box (einfach erweiterbar)  
+- 🎨 **Vollständig anpassbar** – Farben, Emojis, Buttons und Texte frei konfigurierbar  
+- 📊 **Live Status Monitoring** – Automatische Updates für Java- und Bedrock-Server  
+- 🖼️ **Server Icons** – Automatisches Abrufen und Speichern von Server-Favicons  
+- 🔧 **30+ Debug Tools** – Professionelles Testing & Fehlersuche integriert  
+- ⚙️ **Setup via Discord** – Konfiguration über Slash-Commands, kein JSON-Editieren nötig  
+- 🔐 **Permissions System** – Granulare Steuerung der Verwaltungsrechte  
+
+---
 
 ## 📦 Installation
 
+Der Bot bietet zwei Installationswege:
+
+### 🅰️ Methode A: Der neue Installer (Empfohlen)
+
+1. Lade die `installer.exe` (Windows) oder `installer.js` aus dem neuesten Release herunter  
+2. Starte die Datei  
+3. Folge den Anweisungen:  
+   - Node.js wird geprüft  
+   - Der Bot wird automatisch geladen  
+   - Alle Module werden installiert  
+   - Dein **Bot-Token** wird direkt abgefragt  
+
+---
+
+### 🅱️ Methode B: Manuelle Installation
+
 ```bash
 # 1. Repository clonen
-git clone https://github.com/yourname/minecraft-status-bot
-cd minecraft-status-bot
+git clone https://github.com/Gamer100309/MC-Server-Status-Bot
+cd MC-Server-Status-Bot
 
 # 2. Dependencies installieren
 npm install
 
 # 3. Config erstellen
-cp global-config.example.json global-config.json
+# Erstelle eine global-config.json mit deinem Bot-Token
 
-# 4. Bot Token eintragen
-# Öffne global-config.json und füge deinen Discord Bot Token ein
-
-# 5. Bot starten
+# 4. Bot starten
 node index.js
 ```
 
-## 🎯 Commands
-
-```
-/setup      - Interaktives Setup-Menü
-/reload     - Config & Monitoring neu laden
-/refresh    - Status-Messages neu erstellen
-/botinfo    - Bot Statistiken anzeigen
-/checkperms - Bot Berechtigungen prüfen
-```
-
-## 🧪 Testing
-
-```bash
-# Alle Tests ausführen (Windows)
-Test_all_debug_tools.bat
-
-# Alle Tests ausführen (Linux/Mac)
-./Test_all_debug_tools.sh
-
-# Einzelne Tests
-node Debug/master-debug.js
-node Debug/check-config.js
-node Debug/token-validator.js
-```
-
-## 📁 Projekt Struktur
-
-```
-Bot/
-├── index.js              # Haupteinstiegspunkt
-├── global-config.json    # Bot Token & Defaults
-├── package.json          # Dependencies
-├── cogs/                 # 12 Module
-│   ├── CommandHandler.js
-│   ├── ConfigManager.js
-│   ├── MessageHandler.js
-│   └── ...
-├── texts/                # Multi-Language
-│   ├── de.json
-│   └── en.json
-└── Debug/                # 30 Debug Tools
-    ├── master-debug.js
-    └── ...
-```
-
-## 🌐 Neue Sprache hinzufügen
-
-1. Kopiere `texts/en.json` → `texts/es.json`
-2. Ändere `_meta` Sektion
-3. Übersetze Texte
-4. Bot restart → Sprache erscheint automatisch
-
-## 🤝 Contributing
-
-Pull Requests sind willkommen! Bitte:
-
-1. Fork das Repository
-2. Branch erstellen (`git checkout -b feature/amazing`)
-3. Changes committen (`git commit -m 'Add amazing feature'`)
-4. Tests laufen lassen (`Test_all_debug_tools.bat`)
-5. Push to branch (`git push origin feature/amazing`)
-6. Pull Request öffnen
-
-## 📄 Lizenz
-
-**GNU General Public License v3.0** - Siehe [LICENSE](LICENSE) für Details
-
-### Was bedeutet das?
-
-✅ **Du darfst:**
-- Den Bot kostenlos nutzen (privat & kommerziell)
-- Den Quellcode ansehen & studieren
-- Den Code modifizieren & anpassen
-- Modifizierte Versionen weitergeben
-
-⚠️ **Du musst:**
-- Diese Lizenz in allen Kopien behalten
-- Deine Änderungen unter GPL v3 teilen
-- Den Quellcode bereitstellen
-- Den Original-Autor nennen
-
-❌ **Du darfst nicht:**
-- Den Bot ohne Quellcode verkaufen
-- Die Lizenz restriktiver machen
-- Copyright-Hinweise entfernen
-
-## 🙏 Credits
-
-**Author:** RedCity Industries | Gamer100309  
-**Project:** Minecraft Multi-Server Status Bot v4.0  
-**GitHub:** [Gamer100309](https://github.com/Gamer100309)
-
-### Genutzte Libraries:
-- [discord.js](https://discord.js.org/) - Discord API Library (Apache-2.0)
-- [minecraft-server-util](https://www.npmjs.com/package/minecraft-server-util) - Minecraft Server Status (MIT)
-
-## 📊 Statistiken
-
-- **Lines of Code**: ~5000+
-- **Modules**: 12
-- **Commands**: 5
-- **Debug Tools**: 30
-- **Languages**: 2 (+ Custom)
+💡 **Tipp:**  
+Sieh dir die Datei **Discord Bot Token Guide.md** an, falls du Hilfe beim Erstellen des Bots benötigst.
 
 ---
 
-**v4.0** - Made with ❤️ by RedCity Industries | Gamer100309  
-**License:** GPL v3.0 - Free & Open Source  
-**Discord:** Ein Bot für die Community! 🎮
+## 🎯 Commands
+
+```text
+/setup        - Öffnet das interaktive Setup-Menü (Server hinzufügen / löschen)
+/reload       - Lädt Konfiguration & Monitoring sofort neu
+/refresh      - Löscht alte Status-Nachrichten und erstellt sie neu
+/botinfo      - Zeigt Statistiken, Entwickler-Infos & GitHub-Link
+/checkperms   - Prüft, ob der Bot alle nötigen Rechte im aktuellen Kanal hat
+```
+
+---
+
+## 🧪 Testing & Debugging
+
+Der Bot verfügt über eine umfangreiche Test-Suite im **Debug/**-Ordner:
+
+- **Windows**
+```bash
+Test_all_debug_tools.bat
+```
+
+- **Linux / macOS**
+```bash
+./Test_all_debug_tools.sh
+```
+
+- **Einzeltests**
+```bash
+node Debug/token-validator.js
+```
+
+---
+
+## 🤝 Contributing & Lizenz
+
+📜 **GNU General Public License v3.0**
+
+✅ **Erlaubt**
+- Nutzung  
+- Modifikation  
+- Weitergabe  
+
+⚠️ **Bedingung**
+- Modifizierte Versionen müssen ebenfalls unter **GPL v3** stehen  
+- Der Original-Autor **(Gamer100309 | RedCity Industries)** muss genannt werden  
+
+---
+
+## 🙏 Credits & Info
+
+- **Original Author:** Gamer100309 / RedCity Industries  
+- **Version:** v5.1.0 Stable  
+- **Engine:** discord.js & minecraft-server-util  
+
+---
+
+### ❤️ v5.1
+
+**Made with ❤️ by RedCity Industries**  
+*Free & Open Source Minecraft Tooling*
