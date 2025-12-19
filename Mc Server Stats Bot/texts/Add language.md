@@ -82,7 +82,9 @@ node index.js
 
 ```json
 
-"title": "{emoji} {serverName} En línea"
+"title": "{emoji} {serverName} ist Online"
+
+"title": "{emoji} {serverName} está en línea"
 
 ```
 
@@ -92,7 +94,7 @@ node index.js
 
 ```json
 
-"title": "{emoji} {nombreDelServidor} En línea"
+"title": "{emoticon} {nombreServidor} En línea"
 
 ```
 
