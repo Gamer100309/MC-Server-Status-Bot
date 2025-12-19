@@ -24,7 +24,7 @@ Der Bot bietet zwei Installationswege:
 
 ### 🅰️ Methode A: Der neue Installer (Empfohlen)
 
-1. Lade die `installer.exe` (Windows) oder `installer.js` aus dem neuesten Release herunter  
+1. Lade die `RedCity_Mc_Stats_Bot_installer.exe` (Windows) oder `RedCity_Mc_Stats_Bot_installer` (Linux/Mac) aus dem neuesten Release herunter  
 2. Starte die Datei  
 3. Folge den Anweisungen:  
    - Node.js wird geprüft  
