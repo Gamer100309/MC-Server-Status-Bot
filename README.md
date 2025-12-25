@@ -40,7 +40,6 @@ Ein hochprofessioneller Discord-Bot für das Minecraft-Server-Monitoring mit **M
 ### Linux
 
 **One-Line Install (Recommended):**
-
 ```bash
 curl -sSL https://raw.githubusercontent.com/Gamer100309/MC-Server-Status-Bot/main/install.sh | bash
 ```
@@ -59,16 +58,15 @@ Automatically detects your architecture (x64 or ARM64) and installs the correct 
 **Community Support** - Not officially tested, but installers are provided:
 
 - [macOS Intel (x64)](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_macOS_x64)
-- [macOS Apple Silicon (M1/M2/M3)](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_macOS_ARM64)
+- [macOS Apple Silicon (M1/M2/M3/M4)](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_macOS_ARM64)
 
-**Note:** macOS blocks unsigned binaries. See [installation guide](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest) for instructions.
+**Note:** macOS blocks unsigned binaries. See [installation guide](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Installation) for instructions.
 
 ---
 
 ## 🛠️ Manual Installation
 
 If you prefer to install manually or the installer doesn't work for your system:
-
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Gamer100309/MC-Server-Status-Bot.git
@@ -86,7 +84,7 @@ node index.js
 ```
 
 💡 **Need help creating a Discord Bot?**  
-See our [Discord Bot Token Guide]([https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Discord%20Bot%20Token%20Guide.md](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/Discord.Bot.Token.Guide.md))
+See our [Discord Bot Setup Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Discord‐Bot‐Setup)
 
 ---
 
@@ -123,7 +121,39 @@ Currently supported languages:
 - 🇩🇪 German (Deutsch)
 
 **Want to contribute a translation?**  
-Check out our [Translation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/51781dec0227bf0cb711514fd2276efdc01649e6/Mc%20Server%20Stats%20Bot/texts/Add%20language.md) and submit a Pull Request!
+Check out our [Translation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Contributing‐Translations) and submit a Pull Request!
+
+---
+
+## 📚 Documentation
+
+**Complete documentation is available in our Wiki:**
+
+🔗 **[Visit the Full Wiki](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki)**
+
+### Quick Links:
+
+**🚀 Getting Started**
+- [Installation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Installation) - Complete installation instructions
+- [Discord Bot Setup](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Discord‐Bot‐Setup) - Create and configure your bot
+- [First Steps](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/First‐Steps) - Initial configuration
+
+**📖 User Guide**
+- [Commands Reference](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Commands) - All available commands
+- [Configuration](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Configuration) - Customize your bot
+- [Troubleshooting](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Troubleshooting) - Common issues and solutions
+- [FAQ](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/FAQ) - Frequently asked questions
+
+**🌍 Contributing**
+- [Contributing Translations](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Contributing‐Translations) - Add a new language
+- [Translation Guidelines](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Translation-Guidelines) - Best practices
+- [Contributing Code](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Contributing-Code) - Code contributions
+
+**🔧 Development**
+- [Project Structure](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Project-Structure) - Architecture overview
+- [Development Setup](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Development-Setup) - Dev environment
+- [Debug Tools](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Debug-Tools) - Testing utilities
+- [API Documentation](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/API-Documentation) - Internal APIs
 
 ---
 
@@ -149,7 +179,7 @@ node Debug/network-test.js
 # ... and many more
 ```
 
-See [Debug-README.md](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Debug/Debug-README.md) for complete documentation.
+See [Debug Tools](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Debug-Tools) for complete documentation.
 
 ---
 
@@ -210,7 +240,7 @@ See [LICENSE](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%2
 
 **For running the bot:**
 - Node.js 18+ and npm
-- Discord Bot Token ([How to create]([https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Discord%20Bot%20Token%20Guide.md](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/Discord.Bot.Token.Guide.md)))
+- Discord Bot Token ([How to create](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Discord‐Bot‐Setup))
 - Internet connection
 
 **Supported Operating Systems:**
@@ -220,35 +250,12 @@ See [LICENSE](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%2
 
 ---
 
-## 🔗 Useful Links
-
-- 📖 [Installation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest)
-- 🤖 [Discord Bot Setup Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/Discord.Bot.Token.Guide.md)
-- 🌐 [Add a Language](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/4a51a6bec408fcc1114a1c966765ea5275a7169e/Mc%20Server%20Stats%20Bot/texts/Add%20language.md)
-- 🐛 [Debug Tools](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Debug/Debug-README.md)
-- 📂 [Project Structure](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Project_Structure.md)
-
----
-
-## 📚 Wiki Documentation
-
-For complete documentation, guides, and troubleshooting:
-
-🔗 **[Visit the Full Wiki →](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki)**
-
-- Installation & Setup
-- Commands & Configuration
-- Troubleshooting & FAQ
-- Contributing & Development
-
----
-
 ## 🙏 Credits & Info
 
 **Created by RedCity Industries | Gamer100309**
 
 - 🤖 **Version:** v5.1.0
-- 📅 **Release Date:** December 24, 2025
+- 📅 **Release Date:** December 25, 2025
 - 🔧 **Engine:** discord.js v14 & minecraft-server-util v5
 - 📜 **License:** GNU GPL v3.0
 
@@ -277,6 +284,7 @@ If this bot helps you:
 
 - 💬 [GitHub Discussions](https://github.com/Gamer100309/MC-Server-Status-Bot/discussions) - Ask questions & share ideas
 - 🐛 [Issue Tracker](https://github.com/Gamer100309/MC-Server-Status-Bot/issues) - Report bugs
+- 📖 [Full Wiki](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki) - Complete documentation
 
 ---
 
