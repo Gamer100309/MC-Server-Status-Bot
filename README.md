@@ -223,8 +223,8 @@ See [LICENSE](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%2
 ## 🔗 Useful Links
 
 - 📖 [Installation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest)
-- 🤖 [Discord Bot Setup Guide]([https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Discord%20Bot%20Token%20Guide.md](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/Discord.Bot.Token.Guide.md))
-- 🌐 [Add a Language](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Add_language.md)
+- 🤖 [Discord Bot Setup Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/Discord.Bot.Token.Guide.md)
+- 🌐 [Add a Language](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/4a51a6bec408fcc1114a1c966765ea5275a7169e/Mc%20Server%20Stats%20Bot/texts/Add%20language.md)
 - 🐛 [Debug Tools](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Debug/Debug-README.md)
 - 📂 [Project Structure](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Project_Structure.md)
 
