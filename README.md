@@ -230,6 +230,19 @@ See [LICENSE](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%2
 
 ---
 
+## 📚 Wiki Documentation
+
+For complete documentation, guides, and troubleshooting:
+
+🔗 **[Visit the Full Wiki →](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki)**
+
+- Installation & Setup
+- Commands & Configuration
+- Troubleshooting & FAQ
+- Contributing & Development
+
+---
+
 ## 🙏 Credits & Info
 
 **Created by RedCity Industries | Gamer100309**
