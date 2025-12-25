@@ -2,7 +2,7 @@
 
 Ein hochprofessioneller Discord-Bot für das Minecraft-Server-Monitoring mit **Multi-Language-Support**, jetzt inklusive **Universal Cross-Platform Installer**.
 
-[![GitHub Release](https://img.shields.io/badge/Version-5.1.0-blue)](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/Gamer100309/MC-Server-Status-Bot)](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)]()
 [![License](https://img.shields.io/badge/License-GPL%20v3-green)](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/LICENSE)
 
