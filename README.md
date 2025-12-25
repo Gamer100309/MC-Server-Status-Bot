@@ -108,11 +108,11 @@ Once the bot is running, use these slash commands in Discord:
 
 | Platform | Architecture | Status | Download |
 |----------|-------------|--------|----------|
-| **Windows** | x64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/RedCity_Industries_MC_Stats_Bot_Installer_Windows_x64.exe) |
-| **Linux** | x64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/RedCity_Industries_MC_Stats_Bot_Installer_Linux_x64) |
-| **Linux** | ARM64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/RedCity_Industries_MC_Stats_Bot_Installer_Linux_ARM64) |
-| **macOS** | Intel (x64) | ⚠️ Community | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/RedCity_Industries_MC_Stats_Bot_Installer_macOS_x64) |
-| **macOS** | Apple Silicon | ⚠️ Community | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/download/v5.1.0_Release/RedCity_Industries_MC_Stats_Bot_Installer_macOS_ARM64) |
+| **Windows** | x64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_Windows_x64.exe) |
+| **Linux** | x64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_Linux_x64) |
+| **Linux** | ARM64 | ✅ Full Support | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_Linux_ARM64) |
+| **macOS** | Intel (x64) | ⚠️ Community | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_macOS_x64) |
+| **macOS** | Apple Silicon | ⚠️ Community | [Download](https://github.com/Gamer100309/MC-Server-Status-Bot/releases/latest/download/RedCity_Industries_MC_Stats_Bot_Installer_macOS_ARM64) |
 
 ---
 
@@ -123,7 +123,7 @@ Currently supported languages:
 - 🇩🇪 German (Deutsch)
 
 **Want to contribute a translation?**  
-Check out our [Translation Guide]([https://github.com/Gamer100309/MC-Server-Status-Bot/blob/main/Mc%20Server%20Stats%20Bot/Add_language.md](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/ad5613999c8fdaae2b9429c06260f1cfd3b5f9d0/Mc%20Server%20Stats%20Bot/texts/Add%20language.md)) and submit a Pull Request!
+Check out our [Translation Guide](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/51781dec0227bf0cb711514fd2276efdc01649e6/Mc%20Server%20Stats%20Bot/texts/Add%20language.md) and submit a Pull Request!
 
 ---
 
