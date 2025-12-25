@@ -185,10 +185,12 @@ See [Debug Tools](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Debug
 
 ## 📸 Screenshots
 
-![Server Status Embed](https://github.com/user-attachments/assets/bf53c89b-b306-419d-8020-81331167647d)
+<img width="494" height="352" alt="Server Status Embed" src="https://github.com/user-attachments/assets/bf53c89b-b306-419d-8020-81331167647d" />
+
 *Real-time Minecraft server status with player count and latency*
 
-![Setup Menu](https://github.com/user-attachments/assets/b575b22a-8f9e-4cfc-a822-61fa0cd63e44)
+<img width="481" height="533" alt="Setup Menu" src="https://github.com/user-attachments/assets/b575b22a-8f9e-4cfc-a822-61fa0cd63e44" />
+
 *Interactive setup menu with multiple configuration options*
 
 ---
