@@ -41,7 +41,7 @@ Ein hochprofessioneller Discord-Bot für das Minecraft-Server-Monitoring mit **M
 
 **One-Line Install (Recommended):**
 ```bash
-curl -sSL https://raw.githubusercontent.com/Gamer100309/MC-Server-Status-Bot/main/install.sh | bash
+bash <(curl -sSL https://raw.githubusercontent.com/Gamer100309/MC-Server-Status-Bot/main/install.sh)
 ```
 
 Automatically detects your architecture (x64 or ARM64) and installs the correct version!
