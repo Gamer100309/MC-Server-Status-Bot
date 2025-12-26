@@ -23,9 +23,10 @@
 
 ## 🔧 Debug Tools
 
-For debugging and testing, see the [Debug folder](Debug/) and [Debug-README.md](Debug/Debug-README.md).
+For debugging and testing, see the [Debug folder](https://github.com/Gamer100309/MC-Server-Status-Bot/tree/25c792a45663e39dccec1d6fb4d58cd51857cb7a/Mc%20Server%20Stats%20Bot/Debug) and [Debug-README.md](https://github.com/Gamer100309/MC-Server-Status-Bot/blob/25c792a45663e39dccec1d6fb4d58cd51857cb7a/Mc%20Server%20Stats%20Bot/Debug/Debug-README.md).
 
 ---
 
 **Created by RedCity Industries | Gamer100309**  
 *v5.1.2 - December 2025*
+
