@@ -141,6 +141,7 @@ Check out our [Translation Guide](https://github.com/Gamer100309/MC-Server-Statu
 **📖 User Guide**
 - [Commands Reference](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Commands) - All available commands
 - [Configuration](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Configuration) - Customize your bot
+- [How to Stop the Bot](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/How%E2%80%90to%E2%80%90Stop%E2%80%90the%E2%80%90Bot) - Stop the bot properly
 - [Troubleshooting](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/Troubleshooting) - Common issues and solutions
 - [FAQ](https://github.com/Gamer100309/MC-Server-Status-Bot/wiki/FAQ) - Frequently asked questions
 
