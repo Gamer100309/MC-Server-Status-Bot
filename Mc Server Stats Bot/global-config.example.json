@@ -1,6 +1,6 @@
 {
   "token": "YOUR_BOT_TOKEN_HERE",
-  "verboseLogging": true,
+  "verboseLogging": false,
   "defaults": {
     "updateInterval": 10000,
     "embedColors": {
@@ -31,5 +31,10 @@
       "defaultLanguage": "en",
       "allowCustomTexts": true
     }
+  },
+  "contributor": {
+    "enabled": false,
+    "name": "Your Name",
+    "link": "https://github.com/yourusername"
   }
 }
