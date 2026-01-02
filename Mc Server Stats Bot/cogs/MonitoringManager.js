@@ -128,6 +128,12 @@ class MonitoringManager {
         const intervals = [];
         
         for (const srv of gcfg.servers) {
+			// Skip if monitoring disabled
+			if (srv.monitoringEnabled === false) {
+				this.logger.verbose(`Monitoring für ${srv.serverName} ist deaktiviert`);
+				continue;
+			}
+			
             const interval = srv.updateInterval || this.configManager.globalConfig.defaults.updateInterval;
             
             // ═══════════════════════════════════════════════════════════
