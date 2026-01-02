@@ -111,6 +111,20 @@ class ConfigManager {
                     }
                 }
                 
+				// Migration: Füge monitoringEnabled zu Servern hinzu falls nicht vorhanden
+                if (config.servers) {
+                    let needsSave = false;
+                    config.servers.forEach(srv => {
+                        if (srv.monitoringEnabled === undefined) {
+                            srv.monitoringEnabled = true; // Default: Monitoring ist AN
+                            needsSave = true;
+                        }
+                    });
+                    if (needsSave) {
+                        this.saveGuild(guildId, config);
+                    }
+                }
+				
                 return config;
             } catch (e) {
                 console.error(`Guild ${guildId}: Config Error`);
