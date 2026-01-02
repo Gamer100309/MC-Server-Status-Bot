@@ -16,7 +16,7 @@
         "servers": {
           "label": "Server Verwaltung",
           "labelWithEmoji": "📊 Server Verwaltung",
-          "description": "Server hinzufügen, bearbeiten oder löschen",
+          "description": "Server verwalten und Monitoring steuern",
           "emoji": "📊"
         },
         "intervals": {
@@ -80,11 +80,58 @@
           "description": "Server aus dem Monitoring entfernen",
           "emoji": "🗑️"
         },
+        "toggle": {
+          "label": "Monitoring an/aus",
+          "labelWithEmoji": "🔄 Monitoring an/aus",
+          "description": "Server-Überwachung aktivieren/deaktivieren",
+          "emoji": "🔄"
+        },
         "back": {
           "label": "← Zurück zum Hauptmenü",
           "labelWithEmoji": "← Zurück zum Hauptmenü",
           "description": "Zurück zur Kategorieauswahl",
           "emoji": "↩️"
+        }
+      },
+      "toggle": {
+        "enabled": {
+          "title": "✅ Monitoring aktiviert",
+          "description": "**{serverName}**\nMonitoring wurde aktiviert!"
+        },
+        "disabled": {
+          "title": "⏸️ Monitoring deaktiviert",
+          "description": "**{serverName}**\nMonitoring wurde pausiert."
+        },
+        "selectPrompt": "🔄 Monitoring an/aus",
+        "selectDescription": "Wähle einen Server oder aktiviere/deaktiviere alle auf einmal:",
+        "selectPlaceholder": "🔄 Server wählen...",
+        "noServers": "❌ Keine Server vorhanden!",
+        "stats": "📊 Statistik",
+        "statsValue": "✅ Aktiv: {active}\n⏸️ Pausiert: {inactive}\n📋 Gesamt: {total}",
+        "active": "Aktiv",
+        "paused": "Pausiert",
+        "separator": "Einzelne Server:",
+		"separatorSelected": {
+		  "title": "ℹ️ Nur ein Trenner",
+		  "description": "Das ist nur ein optischer Trenner.\n\nBitte wähle einen Server oder eine der Aktionen darüber."
+		},
+        "allOn": {
+          "label": "Alle aktivieren",
+          "description": "Alle Server-Überwachung aktivieren",
+          "emoji": "✅",
+          "success": {
+            "title": "✅ Alle Server aktiviert",
+            "description": "**{count} Server** wurden aktiviert!\n\n✅ Monitoring läuft für alle Server."
+          }
+        },
+        "allOff": {
+          "label": "Alle deaktivieren",
+          "description": "Alle Server-Überwachung pausieren",
+          "emoji": "⏸️",
+          "success": {
+            "title": "⏸️ Alle Server deaktiviert",
+            "description": "**{count} Server** wurden pausiert!\n\n⏸️ Monitoring ist für alle Server gestoppt."
+          }
         }
       },
       "add": {
@@ -549,6 +596,9 @@
     "botinfo": {
       "title": "🤖 Bot Informationen",
       "fields": {
+        "developer": "👨‍💻 Original-Entwickler",
+        "source": "📂 Quellcode",
+        "contributor": "🔧 Weiterentwickelt von",
         "servers": "📊 Server",
         "guilds": "🌐 Guilds",
         "ping": "📡 Ping",
