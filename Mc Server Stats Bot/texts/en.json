@@ -16,7 +16,7 @@
         "servers": {
           "label": "Server Management",
           "labelWithEmoji": "📊 Server Management",
-          "description": "Add, edit or delete servers",
+          "description": "Manage servers and control monitoring",
           "emoji": "📊"
         },
         "intervals": {
@@ -80,11 +80,58 @@
           "description": "Remove server from monitoring",
           "emoji": "🗑️"
         },
+        "toggle": {
+          "label": "Toggle Monitoring",
+          "labelWithEmoji": "🔄 Toggle Monitoring",
+          "description": "Enable/disable server monitoring",
+          "emoji": "🔄"
+        },
         "back": {
           "label": "← Back to Main Menu",
           "labelWithEmoji": "← Back to Main Menu",
           "description": "Return to category selection",
           "emoji": "↩️"
+        }
+      },
+      "toggle": {
+        "enabled": {
+          "title": "✅ Monitoring Enabled",
+          "description": "**{serverName}**\nMonitoring has been enabled!"
+        },
+        "disabled": {
+          "title": "⏸️ Monitoring Disabled",
+          "description": "**{serverName}**\nMonitoring has been paused."
+        },
+        "selectPrompt": "🔄 Toggle Monitoring",
+        "selectDescription": "Choose a server or enable/disable all at once:",
+        "selectPlaceholder": "🔄 Choose server...",
+        "noServers": "❌ No servers available!",
+        "stats": "📊 Statistics",
+        "statsValue": "✅ Active: {active}\n⏸️ Paused: {inactive}\n📋 Total: {total}",
+        "active": "Active",
+        "paused": "Paused",
+        "separator": "Individual servers:",
+		"separatorSelected": {
+		  "title": "ℹ️ Just a Separator",
+		  "description": "This is just a visual separator.\n\nPlease choose a server or one of the actions above."
+		},
+        "allOn": {
+          "label": "Enable All",
+          "description": "Enable monitoring for all servers",
+          "emoji": "✅",
+          "success": {
+            "title": "✅ All Servers Enabled",
+            "description": "**{count} servers** have been enabled!\n\n✅ Monitoring is running for all servers."
+          }
+        },
+        "allOff": {
+          "label": "Disable All",
+          "description": "Pause monitoring for all servers",
+          "emoji": "⏸️",
+          "success": {
+            "title": "⏸️ All Servers Disabled",
+            "description": "**{count} servers** have been paused!\n\n⏸️ Monitoring is stopped for all servers."
+          }
         }
       },
       "add": {
@@ -549,6 +596,9 @@
     "botinfo": {
       "title": "🤖 Bot Information",
       "fields": {
+        "developer": "👨‍💻 Original Developer",
+        "source": "📂 Source Code",
+        "contributor": "🔧 Developed further by",
         "servers": "📊 Servers",
         "guilds": "🌐 Guilds",
         "ping": "📡 Ping",
