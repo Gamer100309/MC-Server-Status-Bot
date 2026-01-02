@@ -1,6 +1,7 @@
 // ═══════════════════════════════════════════════════════════
 //  MONITORING MANAGER MODULE
 //  Enhanced with Text-System Support (Phase 1)
+//  v5.1.2: Fixed spam issues - State-Loss & Network Errors
 // ═══════════════════════════════════════════════════════════
 
 const { StateManager } = require('./StateManager');
@@ -70,18 +71,43 @@ class MonitoringManager {
             
             if (state?.messageID) {
                 try {
-                    const msg = await channel.messages.fetch(state.messageID);
+                    const msg = await channel.messages.fetch(state.messageID, {
+                        cache: true,
+                        force: true
+                    });
+                    
                     if (msg) {
                         // Einfach nur editieren - KEIN automatisches Löschen!
                         await msg.edit(msgOpts);
                         return;
                     }
                 } catch (e) {
-                    this.logger.verbose(`Message ${state.messageID} nicht gefunden, erstelle neu`);
+                    // ═══════════════════════════════════════════════════════════
+                    // FIX: Besseres Error Handling - verhindert Spam!
+                    // ═══════════════════════════════════════════════════════════
+                    
+                    // 1. Message wurde wirklich gelöscht (Discord Error Code 10008)
+                    if (e.code === 10008) {
+                        this.logger.info(`Message ${state.messageID} wurde gelöscht, erstelle neu`);
+                        // Weiter zu "Neue Message erstellen"
+                    } 
+                    // 2. Network/Timeout Error - SKIP dieses Update!
+                    else if (e.message.includes('Timeout') || 
+                             e.message.includes('ENOTFOUND') || 
+                             e.message.includes('ECONNREFUSED') ||
+                             e.message.includes('ETIMEDOUT')) {
+                        this.logger.warning(`Network error, skipping update for ${srv.serverName}: ${e.message}`);
+                        return; // ← WICHTIG: Keine neue Message bei Netzwerk-Problemen!
+                    }
+                    // 3. Anderer unbekannter Fehler
+                    else {
+                        this.logger.error(`Fetch error for ${srv.serverName}: ${e.code || 'NO_CODE'} - ${e.message}`);
+                        return; // Skip bei unbekannten Fehlern
+                    }
                 }
             }
 
-            // Neue Message erstellen
+            // Neue Message erstellen (nur wenn keine State existiert ODER Message wirklich gelöscht wurde)
             const msg = await channel.send(msgOpts);
             stateMgr.set(srv.channelID, msg.id, data.online ? 'online' : 'offline');
             this.logger.success(`Neue Status-Message erstellt für ${srv.serverName}`);
@@ -104,7 +130,20 @@ class MonitoringManager {
         for (const srv of gcfg.servers) {
             const interval = srv.updateInterval || this.configManager.globalConfig.defaults.updateInterval;
             
-            this.updateStatus(guildId, srv);
+            // ═══════════════════════════════════════════════════════════
+            // FIX: State-Loss Prevention
+            // Prüfe erst ob Message bereits existiert, bevor updateStatus aufgerufen wird
+            // ═══════════════════════════════════════════════════════════
+            const stateMgr = new StateManager(guildId);
+            const state = stateMgr.get(srv.channelID);
+            
+            if (!state || !state.messageID) {
+                // Nur wenn noch keine Message existiert
+                this.updateStatus(guildId, srv);
+            } else {
+                // Message existiert bereits - nur Interval starten
+                this.logger.verbose(`Message für ${srv.serverName} existiert bereits (ID: ${state.messageID})`);
+            }
             
             const iv = setInterval(() => this.updateStatus(guildId, srv), interval);
             intervals.push(iv);
