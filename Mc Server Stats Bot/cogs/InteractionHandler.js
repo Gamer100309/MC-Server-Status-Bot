@@ -604,6 +604,134 @@ class InteractionHandler {
             await this.handleChannelSelect(interaction, gcfg);
             return;
         }
+		
+		// Monitoring Toggle
+        if (interaction.customId === 'setup_monitoring_select' || interaction.customId === 'setup_monitoring_back') {
+            const value = interaction.values[0];
+            
+            if (value === 'back') {
+                await interaction.update({
+                    embeds: [this.setupMenus.createServerManagementEmbed(gcfg)],
+                    components: [this.setupMenus.createServerMenu(gcfg)]
+                });
+                return;
+            }
+
+        // SEPARATOR AUSGEWÄHLT - FREUNDLICHE NACHRICHT
+		if (value === 'separator') {
+			const title = this.messageHandler
+				? this.messageHandler.get('setup.serverManagement.toggle.separatorSelected.title', {}, null, gcfg)
+				: 'ℹ️ Nur ein Trenner';
+			
+			const description = this.messageHandler
+				? this.messageHandler.get('setup.serverManagement.toggle.separatorSelected.description', {}, null, gcfg)
+				: 'Das ist nur ein optischer Trenner.\n\nBitte wähle einen Server oder eine der Aktionen darüber.';
+
+			await interaction.reply({
+				embeds: [new EmbedBuilder()
+					.setColor('#3498DB')
+					.setTitle(title)
+					.setDescription(description)],
+				ephemeral: true
+			});
+			return;
+		}
+
+            // ALLE AKTIVIEREN
+            if (value === 'all_on') {
+                let count = 0;
+                gcfg.servers.forEach(srv => {
+                    if (srv.monitoringEnabled === false) {
+                        srv.monitoringEnabled = true;
+                        count++;
+                    }
+                });
+
+                this.configManager.saveGuild(interaction.guildId, gcfg);
+                this.monitoringManager.startMonitoring(interaction.guildId);
+
+                const title = this.messageHandler
+                    ? this.messageHandler.get('setup.serverManagement.toggle.allOn.success.title', {}, null, gcfg)
+                    : '✅ Alle Server aktiviert';
+                
+                const description = this.messageHandler
+                    ? this.messageHandler.get('setup.serverManagement.toggle.allOn.success.description', { count }, null, gcfg)
+                    : `**${count} Server** wurden aktiviert!\n\n✅ Monitoring läuft für alle Server.`;
+
+                await interaction.update({
+                    embeds: [new EmbedBuilder()
+                        .setColor('#00FF00')
+                        .setTitle(title)
+                        .setDescription(description)],
+                    components: []
+                });
+
+                this.logger.success(`All monitoring enabled (${count} servers) by ${interaction.user.tag}`);
+                return;
+            }
+
+            // ALLE DEAKTIVIEREN
+            if (value === 'all_off') {
+                let count = 0;
+                gcfg.servers.forEach(srv => {
+                    if (srv.monitoringEnabled !== false) {
+                        srv.monitoringEnabled = false;
+                        count++;
+                    }
+                });
+
+                this.configManager.saveGuild(interaction.guildId, gcfg);
+                this.monitoringManager.startMonitoring(interaction.guildId);
+
+                const title = this.messageHandler
+                    ? this.messageHandler.get('setup.serverManagement.toggle.allOff.success.title', {}, null, gcfg)
+                    : '⏸️ Alle Server deaktiviert';
+                
+                const description = this.messageHandler
+                    ? this.messageHandler.get('setup.serverManagement.toggle.allOff.success.description', { count }, null, gcfg)
+                    : `**${count} Server** wurden pausiert!\n\n⏸️ Monitoring ist für alle Server gestoppt.`;
+
+                await interaction.update({
+                    embeds: [new EmbedBuilder()
+                        .setColor('#FFA500')
+                        .setTitle(title)
+                        .setDescription(description)],
+                    components: []
+                });
+
+                this.logger.success(`All monitoring disabled (${count} servers) by ${interaction.user.tag}`);
+                return;
+            }
+
+            // EINZELNER SERVER
+            const idx = parseInt(value);
+            const srv = gcfg.servers[idx];
+            
+            // Toggle monitoring
+            srv.monitoringEnabled = !(srv.monitoringEnabled !== false);
+            
+            this.configManager.saveGuild(interaction.guildId, gcfg);
+            this.monitoringManager.startMonitoring(interaction.guildId);
+            
+            const title = srv.monitoringEnabled
+                ? this.messageHandler.get('setup.serverManagement.toggle.enabled.title', {}, srv, gcfg)
+                : this.messageHandler.get('setup.serverManagement.toggle.disabled.title', {}, srv, gcfg);
+            
+            const description = srv.monitoringEnabled
+                ? this.messageHandler.get('setup.serverManagement.toggle.enabled.description', { serverName: srv.serverName }, srv, gcfg)
+                : this.messageHandler.get('setup.serverManagement.toggle.disabled.description', { serverName: srv.serverName }, srv, gcfg);
+            
+            await interaction.update({
+                embeds: [new EmbedBuilder()
+                    .setColor(srv.monitoringEnabled ? '#00FF00' : '#FFA500')
+                    .setTitle(title)
+                    .setDescription(description)],
+                components: []
+            });
+            
+            this.logger.success(`Monitoring for "${srv.serverName}" ${srv.monitoringEnabled ? 'enabled' : 'disabled'} by ${interaction.user.tag}`);
+            return;
+        }
 
         // ═══════════════════════════════════════════════════════════
         // UPDATE INTERVALS
@@ -1069,6 +1197,14 @@ class InteractionHandler {
                     .setDescription(description)],
                 components: [select]
             });
+			return;
+		}	
+			if (action === 'toggle') {
+            await interaction.update({
+                embeds: [this.setupMenus.createMonitoringToggleEmbed(gcfg.servers, gcfg)],
+                components: [this.setupMenus.createMonitoringToggleMenu(gcfg.servers, gcfg)]
+            });
+            return;
         }
     }
 
@@ -1279,6 +1415,7 @@ class InteractionHandler {
             updateInterval: this.configManager.globalConfig.defaults.updateInterval,
             useServerIcon: true,
             autoSaveIcon: true,
+			monitoringEnabled: true,
             embedSettings: {},
             buttonSettings: { enabled: true }
         };
