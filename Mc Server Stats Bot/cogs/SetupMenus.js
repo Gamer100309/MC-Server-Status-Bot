@@ -149,6 +149,11 @@ class SetupMenus {
                     name: this.getText('setup.serverManagement.actions.delete.labelWithEmoji', {}, gcfg), 
                     value: this.getText('setup.serverManagement.actions.delete.description', {}, gcfg), 
                     inline: false 
+                },
+				{ 
+                    name: this.getText('setup.serverManagement.actions.toggle.labelWithEmoji', {}, gcfg), 
+                    value: this.getText('setup.serverManagement.actions.toggle.description', {}, gcfg), 
+                    inline: false 
                 }
             );
     }
@@ -178,6 +183,12 @@ class SetupMenus {
                             value: 'delete',
                             emoji: this.getText('setup.serverManagement.actions.delete.emoji', {}, gcfg)
                         },
+						{
+                            label: this.getText('setup.serverManagement.actions.toggle.label', {}, gcfg),
+                            description: this.getText('setup.serverManagement.actions.toggle.description', {}, gcfg),
+                            value: 'toggle',
+                            emoji: this.getText('setup.serverManagement.actions.toggle.emoji', {}, gcfg)
+                        },
                         {
                             label: this.getText('setup.serverManagement.actions.back.label', {}, gcfg),
                             description: this.getText('setup.serverManagement.actions.back.description', {}, gcfg),
@@ -185,6 +196,151 @@ class SetupMenus {
                             emoji: this.getText('setup.serverManagement.actions.back.emoji', {}, gcfg)
                         }
                     ])
+            );
+    }
+	
+	// ═══════════════════════════════════════════════════════════
+    // MONITORING TOGGLE
+    // ═══════════════════════════════════════════════════════════
+
+    createMonitoringToggleEmbed(servers, gcfg = null) {
+        const embed = new EmbedBuilder()
+            .setColor('#FFA500')
+            .setTitle(this.getText('setup.serverManagement.toggle.selectPrompt', {}, gcfg))
+            .setDescription(this.getText('setup.serverManagement.toggle.selectDescription', {}, gcfg));
+
+        if (servers.length === 0) {
+            embed.setDescription(this.getText('setup.serverManagement.toggle.noServers', {}, gcfg));
+            return embed;
+        }
+
+        // Zähle aktive/pausierte Server
+        let activeCount = 0;
+        let inactiveCount = 0;
+
+        servers.forEach(srv => {
+            if (srv.monitoringEnabled !== false) {
+                activeCount++;
+            } else {
+                inactiveCount++;
+            }
+        });
+
+        // Statistik anzeigen
+        const statsValue = this.getText('setup.serverManagement.toggle.statsValue', {
+            active: activeCount,
+            inactive: inactiveCount,
+            total: servers.length
+        }, gcfg);
+
+        embed.addFields({
+            name: this.getText('setup.serverManagement.toggle.stats', {}, gcfg),
+            value: statsValue,
+            inline: false
+        });
+
+        return embed;
+    }
+
+    createMonitoringToggleMenu(servers, gcfg = null) {
+        if (servers.length === 0) {
+            return new ActionRowBuilder()
+                .addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('setup_monitoring_back')
+                        .setPlaceholder(this.getText('setup.common.back', {}, gcfg))
+                        .addOptions([{
+                            label: this.getText('setup.common.backToMain', {}, gcfg),
+                            value: 'back',
+                            emoji: '↩️'
+                        }])
+                );
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // ZÄHLE AKTIVE/INAKTIVE SERVER
+        // ═══════════════════════════════════════════════════════════
+        let activeCount = 0;
+        let inactiveCount = 0;
+
+        servers.forEach(srv => {
+            if (srv.monitoringEnabled !== false) {
+                activeCount++;
+            } else {
+                inactiveCount++;
+            }
+        });
+
+        const allActive = activeCount === servers.length;
+        const allInactive = inactiveCount === servers.length;
+
+        // ═══════════════════════════════════════════════════════════
+        // BAUE OPTIONS DYNAMISCH
+        // ═══════════════════════════════════════════════════════════
+        const options = [];
+
+        // ALLE AKTIVIEREN - nur wenn nicht alle schon an sind
+        if (!allActive) {
+            options.push({
+                label: this.getText('setup.serverManagement.toggle.allOn.label', {}, gcfg),
+                description: this.getText('setup.serverManagement.toggle.allOn.description', {}, gcfg),
+                value: 'all_on',
+                emoji: this.getText('setup.serverManagement.toggle.allOn.emoji', {}, gcfg) || '✅'
+            });
+        }
+
+        // ALLE DEAKTIVIEREN - nur wenn nicht alle schon aus sind
+        if (!allInactive) {
+            options.push({
+                label: this.getText('setup.serverManagement.toggle.allOff.label', {}, gcfg),
+                description: this.getText('setup.serverManagement.toggle.allOff.description', {}, gcfg),
+                value: 'all_off',
+                emoji: this.getText('setup.serverManagement.toggle.allOff.emoji', {}, gcfg) || '⏸️'
+            });
+        }
+
+        // Separator nur wenn "Alle"-Buttons da sind - OHNE EMOJI!
+        if (options.length > 0) {
+            options.push({
+                label: '─────────────',
+                description: this.getText('setup.serverManagement.toggle.separator', {}, gcfg),
+                value: 'separator'
+                // KEIN emoji!
+            });
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // EINZELNE SERVER
+        // ═══════════════════════════════════════════════════════════
+        servers.forEach((srv, i) => {
+            const status = srv.monitoringEnabled !== false ? '✅' : '⏸️';
+            const statusText = srv.monitoringEnabled !== false 
+                ? this.getText('setup.serverManagement.toggle.active', {}, gcfg)
+                : this.getText('setup.serverManagement.toggle.paused', {}, gcfg);
+            
+            options.push({
+                label: `${status} ${srv.serverName}`,
+                description: statusText,
+                value: `${i}`,
+                emoji: '🎮'
+            });
+        });
+
+        // ═══════════════════════════════════════════════════════════
+        // ZURÜCK
+        // ═══════════════════════════════════════════════════════════
+        options.push({
+            label: this.getText('setup.common.backToMain', {}, gcfg),
+            value: 'back',
+            emoji: '↩️'
+        });
+
+        return new ActionRowBuilder()
+            .addComponents(
+                new StringSelectMenuBuilder()
+                    .setCustomId('setup_monitoring_select')
+                    .setPlaceholder(this.getText('setup.serverManagement.toggle.selectPlaceholder', {}, gcfg))
+                    .addOptions(options)
             );
     }
 
